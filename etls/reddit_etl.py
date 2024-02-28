@@ -9,6 +9,7 @@ from utils.constants import POST_FIELDS
 
 
 def connect_reddit(client_id, client_secret, user_agent) -> Reddit:
+    """connect to reddit using praw"""
     try:
         reddit = praw.Reddit(client_id=client_id,
                              client_secret=client_secret,
@@ -21,19 +22,21 @@ def connect_reddit(client_id, client_secret, user_agent) -> Reddit:
 
 
 def extract_posts(reddit_instance: Reddit, subreddit: str, time_filter: str, limit=None):
-    subreddit = reddit_instance.subreddit(subreddit)
-    posts = subreddit.top(time_filter=time_filter, limit=limit)
+    """extract posts from a subreddit"""
+    subreddit = reddit_instance.subreddit(subreddit) # get the subreddit
+    posts = subreddit.top(time_filter=time_filter, limit=limit) # get the top posts
 
     post_lists = []
     for post in posts:
-        post_dict = vars(post)
-        post = {key: post_dict[key] for key in POST_FIELDS}
-        post_lists.append(post)
+        post_dict = vars(post) # convert the post object to a dictionary
+        post = {key: post_dict[key] for key in POST_FIELDS} # filter the post fields
+        post_lists.append(post) 
 
     return post_lists
 
 
 def transform_data(post_df: pd.DataFrame):
+    """transform the data to the correct format for the database"""
     post_df['created_utc'] = pd.to_datetime(post_df['created_utc'], unit='s')
     post_df['over_18'] = np.where((post_df['over_18'] == True), True, False)
     post_df['author'] = post_df['author'].astype(str)
@@ -48,4 +51,5 @@ def transform_data(post_df: pd.DataFrame):
 
 
 def load_data_to_csv(data: pd.DataFrame, path: str):
+    """load the data to a csv file"""
     data.to_csv(path, index=False)
