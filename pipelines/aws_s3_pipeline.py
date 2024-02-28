@@ -3,6 +3,7 @@ from utils.constants import AWS_BUCKET_NAME
 
 
 def upload_s3_pipeline(ti):
+    """upload the extracted data to s3 by pulling the file path from the xcom"""
     file_path = ti.xcom_pull(task_ids='reddit_extraction', key='return_value')
 
     s3 = connect_to_s3()
