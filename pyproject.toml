@@ -8,12 +8,12 @@ packages = [{include = "pipelines"}, {include = "utils"}]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
-apache-airflow = "^2.10.0"
-apache-airflow-providers-amazon = "^8.0.0"
+apache-airflow = "^3.0.6"
+apache-airflow-providers-amazon = "^9.9.0"
 praw = "^7.8.1"
 pandas = "^2.2.0"
-s3fs = "^2024.0.0"
-numpy = "^1.26.0"
+s3fs = "^2025.10.0"
+numpy = "^2.0.2"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.0.0"
