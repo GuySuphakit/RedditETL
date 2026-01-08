@@ -21,10 +21,63 @@ This project implements a comprehensive data pipeline to extract, transform, and
 - **`config/`**: Stores configuration files.
 
 ## Setup Instructions
-1. Install the required dependencies: `pip install -r requirements.txt`
-2. Set up your AWS credentials in the AWS CLI or environment variables.
-3. Configure the project settings in `config/config.conf`.
-4. Run the Reddit data pipeline using the provided DAG file: `airflow trigger_dag etl_reddit_pipeline`
+
+### Prerequisites
+- Python 3.9-3.12 (Python 3.13+ not yet supported by Apache Airflow)
+- Poetry (for dependency management)
+
+### Installation
+
+1. **Install Poetry** (if not already installed):
+   ```bash
+   curl -sSL https://install.python-poetry.org | python3 -
+   ```
+
+2. **Install project dependencies**:
+   ```bash
+   poetry install
+   ```
+   This will create a virtual environment and install all required packages with secure, up-to-date versions.
+
+3. **Activate the virtual environment**:
+   ```bash
+   poetry shell
+   ```
+
+4. Set up your AWS credentials in the AWS CLI or environment variables.
+
+5. Configure the project settings in `config/config.conf`.
+
+6. Run the Reddit data pipeline using the provided DAG file:
+   ```bash
+   airflow trigger_dag etl_reddit_pipeline
+   ```
+
+### Dependency Management
+
+This project uses Poetry for dependency management, which provides:
+- Automatic dependency resolution
+- Reproducible builds via `poetry.lock`
+- Easy security updates: `poetry update`
+- Separate development dependencies
+
+#### Adding New Dependencies
+```bash
+# Add a runtime dependency
+poetry add package-name
+
+# Add a development dependency
+poetry add --group dev package-name
+```
+
+#### Updating Dependencies
+```bash
+# Update all packages
+poetry update
+
+# Update specific package
+poetry update package-name
+```
 
 ## Usage
 - Customize the DAG (`reddit_dag.py`) to suit your specific Reddit data extraction requirements.

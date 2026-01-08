@@ -4,3 +4,11 @@ logs
 .idea
 __pycache__
 .DS_Store
+
+# Poetry
+.poetry/
+
+# Python package metadata
+*.egg-info/
+dist/
+build/

@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "reddit-etl"
+version = "1.0.0"
+description = "Reddit ETL Pipeline using Apache Airflow"
+authors = ["Suphakit Suphapinyo"]
+readme = "README.md"
+packages = [{include = "pipelines"}, {include = "utils"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+apache-airflow = "^2.10.0"
+apache-airflow-providers-amazon = "^8.0.0"
+praw = "^7.8.1"
+pandas = "^2.2.0"
+s3fs = "^2024.0.0"
+numpy = "^1.26.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0.0"
+black = "^24.0.0"
+flake8 = "^7.0.0"
+mypy = "^1.11.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 100
+target-version = ['py39']
+
+[tool.mypy]
+python_version = "3.9"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
