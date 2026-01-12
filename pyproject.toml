@@ -9,13 +9,13 @@ packages = [{include = "pipelines"}, {include = "utils"}]
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
 apache-airflow = "^3.1.5"
-apache-airflow-providers-amazon = "^8.0.0"
+apache-airflow-providers-amazon = "^9.19.0"
 apache-airflow-providers-fab = "^3.0.2"
 praw = "^7.8.1"
 pandas = "^2.2.0"
-s3fs = "^2024.0.0"
-numpy = "^1.26.0"
-cryptography = "^44.0.1"
+s3fs = "^2026.1.0"
+numpy = "^2.2.6"
+cryptography = "^46.0.3"
 
 
 [tool.poetry.group.dev.dependencies]
