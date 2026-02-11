@@ -242,19 +242,22 @@ uvloop = ["uvloop (>=0.18)"]
 
 [[package]]
 name = "aiosqlite"
-version = "0.22.1"
+version = "0.21.0"
 description = "asyncio bridge to the standard sqlite3 module"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "aiosqlite-0.22.1-py3-none-any.whl", hash = "sha256:21c002eb13823fad740196c5a2e9d8e62f6243bd9e7e4a1f87fb5e44ecb4fceb"},
-    {file = "aiosqlite-0.22.1.tar.gz", hash = "sha256:043e0bd78d32888c0a9ca90fc788b38796843360c855a7262a532813133a0650"},
+    {file = "aiosqlite-0.21.0-py3-none-any.whl", hash = "sha256:2549cf4057f95f53dcba16f2b64e8e2791d7e1adedb13197dd8ed77bb226d7d0"},
+    {file = "aiosqlite-0.21.0.tar.gz", hash = "sha256:131bb8056daa3bc875608c631c678cda73922a2d4ba8aec373b19f18c17e7aa3"},
 ]
 
+[package.dependencies]
+typing_extensions = ">=4.0"
+
 [package.extras]
-dev = ["attribution (==1.8.0)", "black (==25.11.0)", "build (>=1.2)", "coverage[toml] (==7.10.7)", "flake8 (==7.3.0)", "flake8-bugbear (==24.12.12)", "flit (==3.12.0)", "mypy (==1.19.0)", "ufmt (==2.8.0)", "usort (==1.0.8.post1)"]
-docs = ["sphinx (==8.1.3)", "sphinx-mdinclude (==0.6.2)"]
+dev = ["attribution (==1.7.1)", "black (==24.3.0)", "build (>=1.2)", "coverage[toml] (==7.6.10)", "flake8 (==7.0.0)", "flake8-bugbear (==24.12.12)", "flit (==3.10.1)", "mypy (==1.14.1)", "ufmt (==2.5.1)", "usort (==1.0.8.post1)"]
+docs = ["sphinx (==8.1.3)", "sphinx-mdinclude (==0.6.1)"]
 
 [[package]]
 name = "alembic"
@@ -311,25 +314,25 @@ trio = ["trio (>=0.31.0) ; python_version < \"3.10\"", "trio (>=0.32.0) ; python
 
 [[package]]
 name = "apache-airflow"
-version = "3.1.5"
+version = "3.1.7"
 description = "Programmatically author, schedule and monitor data pipelines"
 optional = false
 python-versions = "<3.14,>=3.10"
 groups = ["main"]
 files = [
-    {file = "apache_airflow-3.1.5-py3-none-any.whl", hash = "sha256:cf2316a819d8888d05249488d38e977d6f1ccb4c8d310b55fd4361e3107383e7"},
-    {file = "apache_airflow-3.1.5.tar.gz", hash = "sha256:727f3a4568ba3fb4d61e900a6a8247238e11b7fee5a200cd8a09239bf3d44917"},
+    {file = "apache_airflow-3.1.7-py3-none-any.whl", hash = "sha256:3d5f075b4380a3c0703440cf871d686c2e1e18ff945450b7624b98f327e7a22e"},
+    {file = "apache_airflow-3.1.7.tar.gz", hash = "sha256:d717a1003d9c1c965bc6976bc8e745685510af155437c60dc0a1dbcc579e1c99"},
 ]
 
 [package.dependencies]
-apache-airflow-core = "3.1.5"
-apache-airflow-task-sdk = "1.1.5"
+apache-airflow-core = "3.1.7"
+apache-airflow-task-sdk = "1.1.7"
 
 [package.extras]
 aiobotocore = ["apache-airflow-providers-amazon[aiobotocore] (>=9.6.0)"]
 airbyte = ["apache-airflow-providers-airbyte (>=5.0.0)"]
 alibaba = ["apache-airflow-providers-alibaba (>=3.0.0)"]
-all = ["amqp (>=5.2.0)", "apache-airflow-core[all]", "apache-airflow-core[async]", "apache-airflow-core[graphviz]", "apache-airflow-core[kerberos]", "apache-airflow-core[otel]", "apache-airflow-core[sentry]", "apache-airflow-core[statsd]", "apache-airflow-providers-airbyte (>=5.0.0)", "apache-airflow-providers-alibaba (>=3.0.0)", "apache-airflow-providers-amazon (>=9.0.0)", "apache-airflow-providers-amazon[aiobotocore] (>=9.6.0)", "apache-airflow-providers-amazon[python3-saml]", "apache-airflow-providers-amazon[s3fs]", "apache-airflow-providers-apache-beam (>=5.8.1) ; python_version != \"3.13\"", "apache-airflow-providers-apache-cassandra (>=3.7.0)", "apache-airflow-providers-apache-drill (>=2.8.1)", "apache-airflow-providers-apache-druid (>=3.12.0)", "apache-airflow-providers-apache-flink (>=1.6.0)", "apache-airflow-providers-apache-hdfs", "apache-airflow-providers-apache-hdfs (>=4.6.0)", "apache-airflow-providers-apache-hive (>=8.2.1)", "apache-airflow-providers-apache-iceberg (>=1.2.0)", "apache-airflow-providers-apache-impala (>=1.5.2)", "apache-airflow-providers-apache-kafka (>=1.6.1) ; python_version != \"3.13\"", "apache-airflow-providers-apache-kylin (>=3.8.0)", "apache-airflow-providers-apache-livy (>=3.9.2)", "apache-airflow-providers-apache-pig (>=4.6.0)", "apache-airflow-providers-apache-pinot (>=4.5.1)", "apache-airflow-providers-apache-spark (>=4.11.1)", "apache-airflow-providers-apache-tinkerpop (>=1.0.0)", "apache-airflow-providers-apprise (>=1.4.1)", "apache-airflow-providers-arangodb (>=2.7.0)", "apache-airflow-providers-asana (>=2.7.0)", "apache-airflow-providers-atlassian-jira (>=2.7.1)", "apache-airflow-providers-celery (>=3.8.3)", "apache-airflow-providers-cloudant (>=4.0.1)", "apache-airflow-providers-cncf-kubernetes (>=9.0.0)", "apache-airflow-providers-cohere (>=1.4.0)", "apache-airflow-providers-common-compat (>=1.2.1)", "apache-airflow-providers-common-io (>=1.4.2)", "apache-airflow-providers-common-messaging (>=2.0.0)", "apache-airflow-providers-common-sql (>=1.18.0)", "apache-airflow-providers-common-sql[pandas]", "apache-airflow-providers-common-sql[polars]", "apache-airflow-providers-databricks (>=6.11.0)", "apache-airflow-providers-datadog (>=3.8.0)", "apache-airflow-providers-dbt-cloud (>=3.11.0)", "apache-airflow-providers-dingding (>=3.7.0)", "apache-airflow-providers-discord (>=3.9.0)", "apache-airflow-providers-docker (>=3.14.1)", "apache-airflow-providers-edge3 (>=1.0.0)", "apache-airflow-providers-elasticsearch (>=5.5.2)", "apache-airflow-providers-exasol (>=4.6.1)", "apache-airflow-providers-fab (>=2.2.0) ; python_version != \"3.13\"", "apache-airflow-providers-facebook (>=3.7.0)", "apache-airflow-providers-ftp (>=3.12.0)", "apache-airflow-providers-git (>=0.0.2)", "apache-airflow-providers-github (>=2.8.0)", "apache-airflow-providers-google (>=10.24.0)", "apache-airflow-providers-grpc (>=3.7.0)", "apache-airflow-providers-hashicorp (>=4.0.0)", "apache-airflow-providers-http (>=4.13.2)", "apache-airflow-providers-imap (>=3.8.0)", "apache-airflow-providers-influxdb (>=2.8.0)", "apache-airflow-providers-jdbc (>=4.5.2)", "apache-airflow-providers-jenkins (>=3.7.2)", "apache-airflow-providers-keycloak (>=0.0.1)", "apache-airflow-providers-microsoft-azure (>=10.5.1)", "apache-airflow-providers-microsoft-mssql (>=3.9.2)", "apache-airflow-providers-microsoft-psrp (>=3.0.0)", "apache-airflow-providers-microsoft-winrm (>=3.6.1)", "apache-airflow-providers-mongo (>=4.2.2)", "apache-airflow-providers-mysql (>=5.7.2)", "apache-airflow-providers-neo4j (>=3.8.0)", "apache-airflow-providers-odbc (>=4.8.0)", "apache-airflow-providers-openai (>=1.5.0)", "apache-airflow-providers-openfaas (>=3.7.0)", "apache-airflow-providers-openlineage (>=2.3.0)", "apache-airflow-providers-opensearch (>=1.5.0)", "apache-airflow-providers-opsgenie (>=5.8.0)", "apache-airflow-providers-oracle (>=3.12.0)", "apache-airflow-providers-pagerduty (>=3.8.1)", "apache-airflow-providers-papermill (>=3.8.2)", "apache-airflow-providers-pgvector (>=1.4.0)", "apache-airflow-providers-pinecone (>=2.1.1)", "apache-airflow-providers-postgres (>=5.13.1)", "apache-airflow-providers-presto (>=5.7.0)", "apache-airflow-providers-qdrant (>=1.3.0)", "apache-airflow-providers-redis (>=4.0.0)", "apache-airflow-providers-salesforce (>=5.9.0)", "apache-airflow-providers-samba (>=4.9.0)", "apache-airflow-providers-segment (>=3.7.0)", "apache-airflow-providers-sendgrid (>=4.0.0)", "apache-airflow-providers-sftp (>=5.0.0)", "apache-airflow-providers-singularity (>=3.7.0)", "apache-airflow-providers-slack (>=8.9.1)", "apache-airflow-providers-smtp (>=1.8.1)", "apache-airflow-providers-snowflake (>=5.8.0)", "apache-airflow-providers-sqlite (>=3.9.1)", "apache-airflow-providers-ssh (>=3.14.0)", "apache-airflow-providers-standard (>=0.0.1)", "apache-airflow-providers-tableau (>=5.0.0)", "apache-airflow-providers-telegram (>=4.7.0)", "apache-airflow-providers-teradata (>=2.6.1)", "apache-airflow-providers-trino (>=5.8.1)", "apache-airflow-providers-vertica (>=3.9.1)", "apache-airflow-providers-weaviate (>=3.0.0)", "apache-airflow-providers-yandex (>=4.0.0) ; python_version != \"3.13\"", "apache-airflow-providers-ydb (>=1.4.0) ; python_version != \"3.13\"", "apache-airflow-providers-zendesk (>=4.9.0)", "atlasclient (>=0.1.2)", "authlib (>=1.0.0)", "cloudpickle (>=2.2.1)", "python-ldap (>=3.4.4)", "uv (>=0.9.14)"]
+all = ["amqp (>=5.2.0)", "apache-airflow-core[all]", "apache-airflow-core[async]", "apache-airflow-core[graphviz]", "apache-airflow-core[kerberos]", "apache-airflow-core[otel]", "apache-airflow-core[sentry]", "apache-airflow-core[statsd]", "apache-airflow-providers-airbyte (>=5.0.0)", "apache-airflow-providers-alibaba (>=3.0.0)", "apache-airflow-providers-amazon (>=9.0.0)", "apache-airflow-providers-amazon[aiobotocore] (>=9.6.0)", "apache-airflow-providers-amazon[python3-saml]", "apache-airflow-providers-amazon[s3fs]", "apache-airflow-providers-apache-beam (>=5.8.1) ; python_version != \"3.13\"", "apache-airflow-providers-apache-cassandra (>=3.7.0)", "apache-airflow-providers-apache-drill (>=2.8.1)", "apache-airflow-providers-apache-druid (>=3.12.0)", "apache-airflow-providers-apache-flink (>=1.6.0)", "apache-airflow-providers-apache-hdfs", "apache-airflow-providers-apache-hdfs (>=4.6.0)", "apache-airflow-providers-apache-hive (>=8.2.1)", "apache-airflow-providers-apache-iceberg (>=1.2.0)", "apache-airflow-providers-apache-impala (>=1.5.2)", "apache-airflow-providers-apache-kafka (>=1.6.1) ; python_version != \"3.13\"", "apache-airflow-providers-apache-kylin (>=3.8.0)", "apache-airflow-providers-apache-livy (>=3.9.2)", "apache-airflow-providers-apache-pig (>=4.6.0)", "apache-airflow-providers-apache-pinot (>=4.5.1)", "apache-airflow-providers-apache-spark (>=4.11.1)", "apache-airflow-providers-apache-tinkerpop (>=1.0.0)", "apache-airflow-providers-apprise (>=1.4.1)", "apache-airflow-providers-arangodb (>=2.7.0)", "apache-airflow-providers-asana (>=2.7.0)", "apache-airflow-providers-atlassian-jira (>=2.7.1)", "apache-airflow-providers-celery (>=3.8.3)", "apache-airflow-providers-cloudant (>=4.0.1)", "apache-airflow-providers-cncf-kubernetes (>=9.0.0)", "apache-airflow-providers-cohere (>=1.4.0)", "apache-airflow-providers-common-compat (>=1.2.1)", "apache-airflow-providers-common-io (>=1.4.2)", "apache-airflow-providers-common-messaging (>=2.0.0)", "apache-airflow-providers-common-sql (>=1.18.0)", "apache-airflow-providers-common-sql[pandas]", "apache-airflow-providers-common-sql[polars]", "apache-airflow-providers-databricks (>=6.11.0)", "apache-airflow-providers-datadog (>=3.8.0)", "apache-airflow-providers-dbt-cloud (>=3.11.0)", "apache-airflow-providers-dingding (>=3.7.0)", "apache-airflow-providers-discord (>=3.9.0)", "apache-airflow-providers-docker (>=3.14.1)", "apache-airflow-providers-edge3 (>=1.0.0)", "apache-airflow-providers-elasticsearch (>=5.5.2)", "apache-airflow-providers-exasol (>=4.6.1)", "apache-airflow-providers-fab (>=2.2.0) ; python_version != \"3.13\"", "apache-airflow-providers-facebook (>=3.7.0)", "apache-airflow-providers-ftp (>=3.12.0)", "apache-airflow-providers-git (>=0.0.2)", "apache-airflow-providers-github (>=2.8.0)", "apache-airflow-providers-google (>=10.24.0)", "apache-airflow-providers-grpc (>=3.7.0)", "apache-airflow-providers-hashicorp (>=4.0.0)", "apache-airflow-providers-http (>=4.13.2)", "apache-airflow-providers-imap (>=3.8.0)", "apache-airflow-providers-influxdb (>=2.8.0)", "apache-airflow-providers-jdbc (>=4.5.2)", "apache-airflow-providers-jenkins (>=3.7.2)", "apache-airflow-providers-keycloak (>=0.0.1)", "apache-airflow-providers-microsoft-azure (>=10.5.1)", "apache-airflow-providers-microsoft-mssql (>=3.9.2)", "apache-airflow-providers-microsoft-psrp (>=3.0.0)", "apache-airflow-providers-microsoft-winrm (>=3.6.1)", "apache-airflow-providers-mongo (>=4.2.2)", "apache-airflow-providers-mysql (>=5.7.2)", "apache-airflow-providers-neo4j (>=3.8.0)", "apache-airflow-providers-odbc (>=4.8.0)", "apache-airflow-providers-openai (>=1.5.0)", "apache-airflow-providers-openfaas (>=3.7.0)", "apache-airflow-providers-openlineage (>=2.3.0)", "apache-airflow-providers-opensearch (>=1.5.0)", "apache-airflow-providers-opsgenie (>=5.8.0)", "apache-airflow-providers-oracle (>=3.12.0)", "apache-airflow-providers-pagerduty (>=3.8.1)", "apache-airflow-providers-papermill (>=3.8.2)", "apache-airflow-providers-pgvector (>=1.4.0)", "apache-airflow-providers-pinecone (>=2.1.1)", "apache-airflow-providers-postgres (>=5.13.1)", "apache-airflow-providers-presto (>=5.7.0)", "apache-airflow-providers-qdrant (>=1.3.0)", "apache-airflow-providers-redis (>=4.0.0)", "apache-airflow-providers-salesforce (>=5.9.0)", "apache-airflow-providers-samba (>=4.9.0)", "apache-airflow-providers-segment (>=3.7.0)", "apache-airflow-providers-sendgrid (>=4.0.0)", "apache-airflow-providers-sftp (>=5.0.0)", "apache-airflow-providers-singularity (>=3.7.0)", "apache-airflow-providers-slack (>=8.9.1)", "apache-airflow-providers-smtp (>=1.8.1)", "apache-airflow-providers-snowflake (>=5.8.0)", "apache-airflow-providers-sqlite (>=3.9.1)", "apache-airflow-providers-ssh (>=3.14.0)", "apache-airflow-providers-standard (>=0.0.1)", "apache-airflow-providers-tableau (>=5.0.0)", "apache-airflow-providers-telegram (>=4.7.0)", "apache-airflow-providers-teradata (>=2.6.1)", "apache-airflow-providers-trino (>=5.8.1)", "apache-airflow-providers-vertica (>=3.9.1)", "apache-airflow-providers-weaviate (>=3.0.0)", "apache-airflow-providers-yandex (>=4.0.0) ; python_version != \"3.13\"", "apache-airflow-providers-ydb (>=1.4.0) ; python_version != \"3.13\"", "apache-airflow-providers-zendesk (>=4.9.0)", "atlasclient (>=0.1.2)", "authlib (>=1.0.0)", "cloudpickle (>=2.2.1)", "python-ldap (>=3.4.4)", "uv (>=0.9.26)"]
 all-core = ["apache-airflow-core[all]"]
 amazon = ["apache-airflow-providers-amazon (>=9.0.0)"]
 amazon-aws-auth = ["apache-airflow-providers-amazon[python3-saml]"]
@@ -438,7 +441,7 @@ tableau = ["apache-airflow-providers-tableau (>=5.0.0)"]
 telegram = ["apache-airflow-providers-telegram (>=4.7.0)"]
 teradata = ["apache-airflow-providers-teradata (>=2.6.1)"]
 trino = ["apache-airflow-providers-trino (>=5.8.1)"]
-uv = ["uv (>=0.9.14)"]
+uv = ["uv (>=0.9.26)"]
 vertica = ["apache-airflow-providers-vertica (>=3.9.1)"]
 weaviate = ["apache-airflow-providers-weaviate (>=3.0.0)"]
 yandex = ["apache-airflow-providers-yandex (>=4.0.0) ; python_version != \"3.13\""]
@@ -447,26 +450,26 @@ zendesk = ["apache-airflow-providers-zendesk (>=4.9.0)"]
 
 [[package]]
 name = "apache-airflow-core"
-version = "3.1.5"
+version = "3.1.7"
 description = "Core packages for Apache Airflow, schedule and API server"
 optional = false
 python-versions = "<3.14,>=3.10"
 groups = ["main"]
 files = [
-    {file = "apache_airflow_core-3.1.5-py3-none-any.whl", hash = "sha256:2da6bf39b5473893fc6a2a9408b4bb9151c3a65b2133a4a23640cb66af79224c"},
-    {file = "apache_airflow_core-3.1.5.tar.gz", hash = "sha256:4a2dfba1ff87b923e3b0e9faa7b73d00e2ba93ad1e7e109673c9b7414e96838e"},
+    {file = "apache_airflow_core-3.1.7-py3-none-any.whl", hash = "sha256:831ad153a0b94f467dd1fc720df234c0c47eaf4c3367508ae398d8525ca90f62"},
+    {file = "apache_airflow_core-3.1.7.tar.gz", hash = "sha256:186dc5eaa683c948eb12b03f6cb6ef9e38473d7d3d26f454a73d4c0630bf285d"},
 ]
 
 [package.dependencies]
 a2wsgi = ">=1.10.8"
-aiosqlite = ">=0.20.0"
+aiosqlite = ">=0.20.0,<0.22.0"
 alembic = ">=1.13.1,<2.0"
 apache-airflow-providers-common-compat = ">=1.7.4"
 apache-airflow-providers-common-io = ">=1.6.3"
 apache-airflow-providers-common-sql = ">=1.28.1"
 apache-airflow-providers-smtp = ">=2.3.1"
 apache-airflow-providers-standard = ">=1.9.0"
-apache-airflow-task-sdk = "1.1.5"
+apache-airflow-task-sdk = "1.1.7"
 argcomplete = ">=1.10"
 asgiref = ">=2.3.0"
 attrs = ">=22.1.0,<25.2.0 || >25.2.0"
@@ -504,7 +507,7 @@ psutil = ">=5.8.0"
 pydantic = ">=2.11.0"
 pygments = ">=2.0.1,<2.19.0 || >2.19.0"
 pygtrie = ">=2.5.0"
-pyjwt = ">=2.10.0"
+pyjwt = ">=2.11.0"
 python-daemon = ">=3.0.0"
 python-dateutil = ">=2.7.0"
 python-slugify = ">=5.0"
@@ -741,18 +744,18 @@ openlineage = ["apache-airflow-providers-openlineage"]
 
 [[package]]
 name = "apache-airflow-task-sdk"
-version = "1.1.5"
+version = "1.1.7"
 description = "Python Task SDK for Apache Airflow DAG Authors"
 optional = false
 python-versions = "<3.14,>=3.10"
 groups = ["main"]
 files = [
-    {file = "apache_airflow_task_sdk-1.1.5-py3-none-any.whl", hash = "sha256:d6ecdb5a5350feee01c861ac0d9e7ad50fcae914e459ef6a69a1bb3bc5f9a5e2"},
-    {file = "apache_airflow_task_sdk-1.1.5.tar.gz", hash = "sha256:4a4d31c07f3b7c51374f74635d70e1f2ffb25f116dc50f1310533ee3c63258d8"},
+    {file = "apache_airflow_task_sdk-1.1.7-py3-none-any.whl", hash = "sha256:8c30a0f4a7111a18a5a7d6b0de18a235b805efc9491e9d1ba9fda43cd7e9d51e"},
+    {file = "apache_airflow_task_sdk-1.1.7.tar.gz", hash = "sha256:658815d5d93c8b3e04432c50d31bcec382f4637466ea558bc13e97907c725bc5"},
 ]
 
 [package.dependencies]
-apache-airflow-core = ">=3.1.5,<3.2.0"
+apache-airflow-core = ">=3.1.7,<3.2.0"
 asgiref = ">=2.3.0"
 attrs = ">=24.2.0,<25.2.0 || >25.2.0"
 babel = ">=2.17.0"
@@ -4556,21 +4559,21 @@ files = [
 
 [[package]]
 name = "pyjwt"
-version = "2.10.1"
+version = "2.11.0"
 description = "JSON Web Token implementation in Python"
 optional = false
 python-versions = ">=3.9"
 groups = ["main"]
 files = [
-    {file = "PyJWT-2.10.1-py3-none-any.whl", hash = "sha256:dcdd193e30abefd5debf142f9adfcdd2b58004e644f25406ffaebd50bd98dacb"},
-    {file = "pyjwt-2.10.1.tar.gz", hash = "sha256:3cc5772eb20009233caf06e9d8a0577824723b44e6648ee0a2aedb6cf9381953"},
+    {file = "pyjwt-2.11.0-py3-none-any.whl", hash = "sha256:94a6bde30eb5c8e04fee991062b534071fd1439ef58d2adc9ccb823e7bcd0469"},
+    {file = "pyjwt-2.11.0.tar.gz", hash = "sha256:35f95c1f0fbe5d5ba6e43f00271c275f7a1a4db1dab27bf708073b75318ea623"},
 ]
 
 [package.extras]
 crypto = ["cryptography (>=3.4.0)"]
-dev = ["coverage[toml] (==5.0.4)", "cryptography (>=3.4.0)", "pre-commit", "pytest (>=6.0.0,<7.0.0)", "sphinx", "sphinx-rtd-theme", "zope.interface"]
+dev = ["coverage[toml] (==7.10.7)", "cryptography (>=3.4.0)", "pre-commit", "pytest (>=8.4.2,<9.0.0)", "sphinx", "sphinx-rtd-theme", "zope.interface"]
 docs = ["sphinx", "sphinx-rtd-theme", "zope.interface"]
-tests = ["coverage[toml] (==5.0.4)", "pytest (>=6.0.0,<7.0.0)"]
+tests = ["coverage[toml] (==7.10.7)", "pytest (>=8.4.2,<9.0.0)"]
 
 [[package]]
 name = "pytest"
@@ -6469,4 +6472,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.10,<3.13"
-content-hash = "8116413089ab3265c1c5379346cf058c2addcbcfba0f1da6f5291f6537c2087a"
+content-hash = "98ee45c416a0677ac77db9c645e16a48b8f744107b5deec59a257aa91ba71948"
