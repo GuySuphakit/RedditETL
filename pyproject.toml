@@ -23,10 +23,10 @@ protobuf = ">=5.29.6,<7"
 
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.0.0"
+pytest = "^9.0.2"
 black = "^26.3.1"
 flake8 = "^7.0.0"
-mypy = "^1.11.0"
+mypy = "^1.20.0"
 
 [build-system]
 requires = ["poetry-core"]
