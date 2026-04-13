@@ -8,18 +8,18 @@ packages = [{include = "pipelines"}, {include = "utils"}]
 
 [tool.poetry.dependencies]
 python = ">=3.10,<3.13"
-apache-airflow = "^3.1.7"
-apache-airflow-providers-amazon = "^9.22.0"
-apache-airflow-providers-fab = "^3.0.2"
-apache-airflow-providers-http = "^6.0.0"
+apache-airflow = "^3.2.0"
+apache-airflow-providers-amazon = "^9.24.0"
+apache-airflow-providers-fab = "^3.6.1"
+apache-airflow-providers-http = "^6.0.2"
 praw = "^7.8.1"
 pandas = "^2.2.0"
-s3fs = "^2024.0.0"
-numpy = "^1.26.0"
+s3fs = "^2026.3.0"
+numpy = "^2.2.6"
 # Security fixes for transitive dependencies
 pyjwt = "^2.12.0"
-python-multipart = "^0.0.22"
-protobuf = ">=5.29.6,<7"
+python-multipart = "^0.0.26"
+protobuf = ">=6.33.6,<7"
 
 
 [tool.poetry.group.dev.dependencies]
